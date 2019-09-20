@@ -1,0 +1,13 @@
+html{
+    height: 100%;
+    background: radial-gradient(circle,#fff,#ccc);
+}
+#container{
+    height: 500px;
+    width: 650px;
+    background-color: #9DD2EA;
+    margin: 100px auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 3px 0px #009DE4;
+}
