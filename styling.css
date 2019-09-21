@@ -36,3 +36,15 @@ html{
     padding: 10px;
     display: none;
 }
+#question{
+    width: 600px;
+    height: 250px;
+    background-color: #9DA0EA;
+    margin: 60px auto;
+    box-shadow: 0px 4px 0px 0px #535AA8;
+    border-radius: 10px;
+    text-align: center;
+    font-family: cursive , sans-serif;
+    font-size: 150px;
+    color: black;
+}
