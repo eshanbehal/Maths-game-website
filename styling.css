@@ -145,3 +145,19 @@ html{
     */
     display: none;
 }
+#gameOver{
+    width: 650px;
+    height: 270px;
+    background: linear-gradient(#F3C46B , #F3766C);
+    color: white;
+    position: absolute;
+    top: 140px;
+    left: 35px;
+    font-size: 3em;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+    text-transform: uppercase;
+    z-index: 2;
+    
+}
