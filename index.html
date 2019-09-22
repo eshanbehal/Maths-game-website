@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="styling.css">
+    
+    
     </head>
     <body>
     <div id="container">
@@ -36,7 +38,48 @@
         
         
         </div>
+       <script>
         
-        <script src="javascript.js"> </script>
+           var playing = false;
+var score;
+
+//if we click on start/reset button
+
+document.getElementById("startreset").onclick = function(){
+    
+    //if we are playing
+    
+    if(playing == true){
+        
+        //reload page
+        
+        location.reload();
+        
+    }else{ 
+        //if we are not playing
+        
+        //change mode to playing
+        
+        playing = true;
+        
+        //set score to 0.
+        
+        score = 0;
+
+  document.getElementById("scorevalue").innerHTML = score;
+        
+      //show countdown box.
+        
+        document.getElementById("timeremaining").style.display="block";
+        
+       //change button to reset.
+        
+        document.getElementById("startreset").innerHTML = "Reset Game";
+        
+    }    
+    
+}
+        </script> 
+        
     </body>
 </html>
