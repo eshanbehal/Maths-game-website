@@ -30,7 +30,7 @@
         
         <div id="startreset">Start Game</div>
         
-        <div id="timeremaining">Time Remaining: <span id="timeremainingvalue">51</span> sec</div>
+        <div id="timeremaining">Time Remaining: <span id="timeremainingvalue">60</span> sec</div>
         
         <div id="gameOver">
         
@@ -40,8 +40,10 @@
         </div>
        <script>
         
-           var playing = false;
+var playing = false;
 var score;
+var action;
+var timeremaining;
 
 //if we click on start/reset button
 
@@ -72,11 +74,27 @@ document.getElementById("startreset").onclick = function(){
         
         document.getElementById("timeremaining").style.display="block";
         
+        timeremaining=60;
+        
+        document.getElementById("timeremainingvalue").innerHTML= timeremaining;
+        
        //change button to reset.
         
         document.getElementById("startreset").innerHTML = "Reset Game";
         
+         startcountdown();
+        
     }    
+    
+}
+
+function startcountdown(){
+    action = setInterval(function(){
+        
+        timeremaining -= 1;
+        
+        document.getElementById("timeremainingvalue").innerHTML= timeremaining;
+    }, 1000);
     
 }
         </script> 
