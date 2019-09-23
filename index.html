@@ -82,20 +82,35 @@ document.getElementById("startreset").onclick = function(){
         
         document.getElementById("startreset").innerHTML = "Reset Game";
         
-         startcountdown();
+         startCountdown();
         
     }    
     
 }
 
-function startcountdown(){
+function startCountdown(){
     action = setInterval(function(){
         
         timeremaining -= 1;
         
         document.getElementById("timeremainingvalue").innerHTML= timeremaining;
+        
+        if(timeremaining == 0){
+            stopCountdown();
+            
+            document.getElementById("gameOver").style.display= "block";
+            
+            document.getElementById("gameOver").innerHTML = "<p>game over!</p><p>your score is "+ score + ".</p>";
+            
+             document.getElementById("timeremaining").style.display= "none";
+        }
     }, 1000);
     
+}
+           
+function stopCountdown(){
+    
+    clearInterval(action);
 }
         </script> 
         
