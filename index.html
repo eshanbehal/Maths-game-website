@@ -167,6 +167,40 @@ function generateQA(){
     }
                
  }
+           
+           //if we click an answer box.
+           
+document.getElementById("box1").onclick = function(){
+    //check if we are playing
+    
+    if(playing==true){//yes
+        if(this.innerHTML == correctAnswer){
+            
+            //as we have got correct answer.
+            
+            score++;
+            
+document.getElementById("scorevalue").innerHTML = score;
+            
+            //hide wrong box and show correct box.
+            
+            hide("wrong");
+            show("correct");
+            setTimeout(function(){
+                
+                hide("correct");
+            } , 1000);
+        }else{
+            //wrong answer
+            
+            hide("correct");
+            show("wrong");
+            setTimeout(function(){
+                hide("wrong");
+            } , 1000);
+        }
+    }
+}
         </script> 
         
     </body>
