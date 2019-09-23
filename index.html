@@ -158,9 +158,11 @@ function generateQA(){
             var wrongAnswer;
             do{
                 wrongAnswer = (1+ Math.round(9*Math.random()))*(1+ Math.round(9*Math.random()));
-            }while(wrongAnswer == correctAnswer)
+            }while(answers.indexOf(wrongAnswer)>-1)
                 
                 document.getElementById("box"+i).innerHTML = wrongAnswer;
+            
+            answers.push(wrongAnswer);
         }
     }
                
