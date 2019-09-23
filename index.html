@@ -28,8 +28,7 @@
         <div id="box4" class="box"></div>
         </div>
         
-        <div id="startreset">Start Game</div>
-        
+        <div id="startreset">Start Game</div>      
         <div id="timeremaining">Time Remaining: <span id="timeremainingvalue">60</span> sec</div>
         
         <div id="gameOver">
@@ -72,18 +71,27 @@ document.getElementById("startreset").onclick = function(){
         
       //show countdown box.
         
-        document.getElementById("timeremaining").style.display="block";
+        show("timeremaining");
         
         timeremaining=60;
         
         document.getElementById("timeremainingvalue").innerHTML= timeremaining;
         
+        //hide game over box.
+        
+        hide("gameOver");
+        
        //change button to reset.
         
         document.getElementById("startreset").innerHTML = "Reset Game";
         
+        //start countdown.
+        
          startCountdown();
         
+        //generate a new q&a
+        
+        generateQA();
     }    
     
 }
@@ -98,11 +106,15 @@ function startCountdown(){
         if(timeremaining == 0){
             stopCountdown();
             
-            document.getElementById("gameOver").style.display= "block";
+            show("gameOver");
             
             document.getElementById("gameOver").innerHTML = "<p>game over!</p><p>your score is "+ score + ".</p>";
             
-             document.getElementById("timeremaining").style.display= "none";
+             hide("timeremaining");
+            hide("correct");
+            hide("wrong");
+            playing = false;
+            document.getElementById("startreset").innerHTML = "Start Game";
         }
     }, 1000);
     
@@ -112,6 +124,20 @@ function stopCountdown(){
     
     clearInterval(action);
 }
+           
+function hide(id){
+    
+    document.getElementById(id).style.display = "none";
+}
+
+function show(id){
+    
+    document.getElementById(id).style.display = "block";
+}
+function genarateQA(){
+               
+               
+           }
         </script> 
         
     </body>
