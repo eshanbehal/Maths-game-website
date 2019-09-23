@@ -170,7 +170,8 @@ function generateQA(){
            
            //if we click an answer box.
            
-document.getElementById("box1").onclick = function(){
+for(i=1; i<5; i++){
+    document.getElementById("box"+ i).onclick = function(){
     //check if we are playing
     
     if(playing==true){//yes
@@ -190,6 +191,11 @@ document.getElementById("scorevalue").innerHTML = score;
                 
                 hide("correct");
             } , 1000);
+            
+            //generate q&a
+            
+            generateQA();
+            
         }else{
             //wrong answer
             
@@ -200,6 +206,7 @@ document.getElementById("scorevalue").innerHTML = score;
             } , 1000);
         }
     }
+}
 }
         </script> 
         
