@@ -43,6 +43,7 @@ var playing = false;
 var score;
 var action;
 var timeremaining;
+var correctAnswer;
 
 //if we click on start/reset button
 
@@ -135,7 +136,16 @@ function show(id){
     document.getElementById(id).style.display = "block";
 }
 function genarateQA(){
-               
+               var x = 1+ Math.round(9*Math.random());
+               var y = 1+ Math.round(9*Math.random());
+               correctAnswer = x*y;
+    
+    document.getElementById("question").innerHTML = x "x" y;
+    
+    var correctPosition = 1+ Math.round(3*Math.random());
+    
+   //for filling the one box with correct answer.
+    document.getElementById("box"+correctPosition).innerHTML = correctAnswer;
                
            }
         </script> 
